@@ -1,6 +1,3 @@
+dist/
+dist/
 node_modules/
-frontend/node_modules/
-venv/
-.env
-*.so
-frontend/dist/
