@@ -1,6 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+
+const XIcon = ({ size = 20 }: { size?: number }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </svg>
+);
 
 const Footer = () => {
   return (
@@ -24,7 +30,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-wpa-blue transition-colors"><Facebook size={20} /></a>
-              <a href="#" className="text-gray-400 hover:text-wpa-blue transition-colors"><Twitter size={20} /></a>
+              <a href="#" className="text-gray-400 hover:text-wpa-blue transition-colors"><XIcon size={20} /></a>
               <a href="#" className="text-gray-400 hover:text-wpa-blue transition-colors"><Linkedin size={20} /></a>
               <a href="#" className="text-gray-400 hover:text-wpa-blue transition-colors"><Instagram size={20} /></a>
             </div>

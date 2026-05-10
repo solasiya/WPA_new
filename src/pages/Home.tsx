@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Server, Code, Smartphone, Cpu, Shield, Zap, ChevronRight, Star } from 'lucide-react';
+import { ArrowRight, Server, Code, Smartphone, Cpu, Shield, Zap, ChevronRight, Star, Terminal, Cloud, Layers, Monitor } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Counter = ({ end, label }: { end: number, label: string }) => {
@@ -172,41 +172,46 @@ const Home = () => {
       <section className="py-20 bg-gray-50 dark:bg-[#060b14] border-y border-gray-200 dark:border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Counter end={150} label="Projects Completed" />
-            <Counter end={95} label="Happy Clients" />
-            <Counter end={50} label="Systems Deployed" />
-            <Counter end={200} label="Custom PCs Built" />
+            <Counter end={10} label="Projects Completed" />
+            <Counter end={10} label="Happy Clients" />
+            <Counter end={30} label="Systems Deployed" />
+            <Counter end={20} label="Custom PCs Built" />
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-gray-900 dark:text-white mb-16">Client Testimonials</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
+      {/* Tech Stack */}
+      <section className="py-24 bg-gray-50 dark:bg-[#04080e] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-wpa-blue/5 blur-[100px]" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-gray-900 dark:text-white mb-6">Technologies We Master</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-16">We leverage the most powerful tools in the industry to build exceptional digital experiences.</p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+            {[
+              { name: 'React', icon: <Code size={28} /> },
+              { name: 'Node.js', icon: <Server size={28} /> },
+              { name: 'Python', icon: <Terminal size={28} /> },
+              { name: 'AWS Cloud', icon: <Cloud size={28} /> },
+              { name: 'Docker', icon: <Layers size={28} /> },
+              { name: 'Flutter', icon: <Smartphone size={28} /> },
+              { name: 'NVIDIA', icon: <Monitor size={28} /> },
+              { name: 'AMD Ryzen', icon: <Cpu size={28} /> }
+            ].map((tech, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="glass p-8 rounded-2xl text-left relative"
+                transition={{ delay: i * 0.05 }}
+                className="glass p-6 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-wpa-blue dark:hover:border-wpa-blue hover:bg-gray-100 dark:hover:bg-white/5 transition-all flex flex-col items-center justify-center gap-3 group cursor-default"
               >
-                <div className="flex text-yellow-400 mb-4">
-                  {[...Array(5)].map((_, idx) => <Star key={idx} size={18} fill="currentColor" />)}
+                <div className="text-gray-500 dark:text-gray-400 group-hover:scale-110 group-hover:text-wpa-blue dark:group-hover:text-wpa-purple transition-all duration-300">
+                  {tech.icon}
                 </div>
-                <p className="text-gray-600 dark:text-gray-300 italic mb-6">
-                  "Web Pros Africa completely transformed our digital presence. The cloud infrastructure they deployed is blazing fast and the new web app has doubled our leads."
-                </p>
-                <div className="flex items-center gap-4 mt-auto">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-wpa-blue to-wpa-purple" />
-                  <div>
-                    <h5 className="font-bold text-gray-900 dark:text-white">Business Owner {i}</h5>
-                    <p className="text-sm text-wpa-blue">Tech Startup</p>
-                  </div>
-                </div>
+                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">{tech.name}</span>
               </motion.div>
             ))}
           </div>
