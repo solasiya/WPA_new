@@ -161,7 +161,7 @@ const Home = () => {
                {/* Decorative tech graphic placeholder */}
                <div className="aspect-square w-full rounded-full bg-gradient-to-tr from-wpa-blue/20 to-wpa-purple/20 blur-3xl absolute inset-0" />
                <div className="relative glass border border-white/20 p-2 rounded-2xl">
-                 <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80" alt="Cyber Security Tech" className="rounded-xl w-full h-[500px] object-cover" />
+                 <img src="/assets/GIF/mp_.gif" alt="Cyber Security Tech" className="rounded-xl w-full h-[500px] object-cover" />
                </div>
             </motion.div>
           </div>
